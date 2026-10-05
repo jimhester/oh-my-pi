@@ -5,6 +5,8 @@
 ### Added
 
 - Added an optional `statefulResponses` compat field for OpenAI Responses models, kept through OpenRouter's Responses dispatch ([#13686](https://github.com/can1357/oh-my-pi/pull/13686) by [@alphastorm](https://github.com/alphastorm)).
+- Added `RUNNER_API_KINDS` and `runnerApiKind()`, the model kind each single-purpose runner API serves; the compat compiler now rejects a provider `kind-apis` entry that lists a runner API under a different kind ([#14483](https://github.com/can1357/oh-my-pi/pull/14483) by [@oshinop](https://github.com/oshinop))
+- Added `Model.kindConfig`, a configured kind that `buildModel` applies over catalog `kind` rules on every rebuild ([#14483](https://github.com/can1357/oh-my-pi/pull/14483) by [@jimhester](https://github.com/jimhester))
 
 ### Changed
 
@@ -177,7 +179,6 @@
 ### Fixed
 
 - Corrected Cerebras model pricing so cached input tokens are charged at the model’s input rate, consistent with Cerebras billing.
-- Added `RUNNER_API_KINDS` and `runnerApiKind()`, the model kind each single-purpose runner API serves; the compat compiler now rejects a provider `kind-apis` entry that lists a runner API under a different kind ([#13533](https://github.com/can1357/oh-my-pi/pull/13533) by [@oshinop](https://github.com/oshinop))
 
 ## [18.3.5] - 2026-09-27
 
